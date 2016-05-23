@@ -1368,7 +1368,7 @@ sub printCtrl
                 push @barriers, $barrier;
             }
         }
-        my $barrierstring = sprintf "waitBarriers([%s])", @barriers;
+        my $barrierstring = sprintf "waitBarriers([%s])", join(",", @barriers);
         push @codes, $barrierstring;
     }
     if($yield ne '-') {
